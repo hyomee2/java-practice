@@ -14,7 +14,7 @@ public class Application2 {
          * -- 출력 예시 --
          * 홀수다.
          * */
-        System.out.println("정수를 하나 입력하세요 : ");
+        System.out.print("정수를 하나 입력하세요 : ");
         Scanner scanner = new Scanner(System.in);
 
         int num = scanner.nextInt();
