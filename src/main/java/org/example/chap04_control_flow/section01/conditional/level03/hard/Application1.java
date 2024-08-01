@@ -26,7 +26,7 @@ public class Application1 {
 
         System.out.print("연산 기호를 입력하세요 : ");
         String symbol = scanner.next();
-
+        
         if (symbol.equals("+"))
             System.out.println(num1 + symbol + num2 + "=" + (num1 + num2));
         else if (symbol.equals("-"))
@@ -39,5 +39,17 @@ public class Application1 {
             System.out.println(num1 + symbol + num2 + "=" + (num1 % num2));
         else
             System.out.println("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
+
+        /* 아래와 같이 작성하는 게 더 깔끔하겠다.
+        switch (symbol) {
+            case "+" -> System.out.println(num1 + symbol + num2 + "=" + (num1 + num2));
+            case "-" -> System.out.println(num1 + symbol + num2 + "=" + (num1 - num2));
+            case "*" -> System.out.println(num1 + symbol + num2 + "=" + (num1 * num2));
+            case "/" -> System.out.println(num1 + symbol + num2 + "=" + (num1 / num2));
+            case "%" -> System.out.println(num1 + symbol + num2 + "=" + (num1 % num2));
+            default -> System.out.println("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
+        }
+        */
+
     }
 }
