@@ -17,10 +17,10 @@ public class Application2 {
          * */
         Scanner scanner1 = new Scanner(System.in);
 
-        System.out.println("체중을 입력하세요: ");
+        System.out.print("체중을 입력하세요: ");
         double weight = scanner1.nextDouble();
 
-        System.out.println("신장을 입력하세요: ");
+        System.out.print("신장을 입력하세요: ");
         double height = scanner1.nextDouble();
 
         double bmi = weight / (height * height);
