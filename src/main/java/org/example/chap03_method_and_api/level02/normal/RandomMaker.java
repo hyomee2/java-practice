@@ -1,4 +1,4 @@
-package org.example.level02.normal;
+package org.example.chap03_method_and_api.level02.normal;
 
 public class RandomMaker {
     public int randomNumber(int min, int max) {

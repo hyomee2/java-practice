@@ -1,6 +1,4 @@
-package org.example.level01.basic;
-
-import org.example.level01.basic.Calculator;
+package org.example.chap03_method_and_api.level01.basic;
 
 public class Application {
     public static void main(String[] args) {

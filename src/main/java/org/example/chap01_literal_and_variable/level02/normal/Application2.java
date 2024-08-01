@@ -1,4 +1,4 @@
-package org.example.level02.normal;
+package org.example.chap01_literal_and_variable.level02.normal;
 
 public class Application2 {
     public static void main(String[] args) {

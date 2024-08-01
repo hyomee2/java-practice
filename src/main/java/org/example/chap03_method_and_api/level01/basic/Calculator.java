@@ -1,6 +1,4 @@
-package org.example.level01.basic;
-
-import java.util.Scanner;
+package org.example.chap03_method_and_api.level01.basic;
 
 public class Calculator {
         public void checkMethod() {
