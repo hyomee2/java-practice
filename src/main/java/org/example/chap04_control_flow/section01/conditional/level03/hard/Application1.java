@@ -26,7 +26,7 @@ public class Application1 {
 
         System.out.print("연산 기호를 입력하세요 : ");
         String symbol = scanner.next();
-        
+
         if (symbol.equals("+"))
             System.out.println(num1 + symbol + num2 + "=" + (num1 + num2));
         else if (symbol.equals("-"))
