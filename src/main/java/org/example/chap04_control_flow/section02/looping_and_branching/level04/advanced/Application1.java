@@ -37,7 +37,7 @@ public class Application1 {
         int num = scanner.nextInt();
 
         for (int i = 0; i < string.length(); i++) {
-            if ((char)(string.charAt(i)) == ' ')
+            if (string.charAt(i) == ' ')
                 System.out.print(' ');
             if (string.charAt(i) >= 97 && string.charAt(i) <= 122)
                 System.out.print((char)((string.charAt(i) - 97 + num) % 26 + 97));
