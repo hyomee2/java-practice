@@ -47,8 +47,8 @@ public class Application2 {
             }
         }
 
-        //for (int i = 0; i < 4; i++)
-        //    System.out.print(baseball[i] + " ");
+        for (int i = 0; i < 4; i++)
+            System.out.print(baseball[i] + " ");
 
         // 프로그램
         for (int i = 0; i < 10; i++) {
@@ -72,8 +72,12 @@ public class Application2 {
             if (countS == 4) {
                 System.out.println("정답입니다.");
                 break;
-            } else
+            } else {
                 System.out.println("아쉽네요 " + countS + "S " + countB + "B 입니다.");
+                if (i == 9)
+                    System.out.println("10번의 기회를 모두 소진하셨습니다. 프로그램을 종료합니다.");
+            }
+
         }
     }
 }
