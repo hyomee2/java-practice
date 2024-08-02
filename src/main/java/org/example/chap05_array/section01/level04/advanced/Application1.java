@@ -19,5 +19,8 @@ public class Application1 {
 
         for (int i = 0; i < lotto.length; i++)
             System.out.println(lotto[i]);
+
+        // 아래와 같이 작성할 수도 있겠다.
+        // for (int j : lotto) System.out.println(j);
     }
 }
