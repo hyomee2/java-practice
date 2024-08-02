@@ -1,6 +1,5 @@
 package org.example.chap05_array.section01.level04.advanced;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Application2 {
@@ -33,36 +32,59 @@ public class Application2 {
         Scanner scanner = new Scanner(System.in);
 
         // 길이 4의 정수 배열 선언
-        int baseball[] = new int[4];
+        int[] baseball = new int[4];
 
-        // 0~9까지의 난수 저장 (이때는 중복될 수 있음)
-        for (int i = 0; i < 4; i++)
-            baseball[i] = (int) (Math.random() * 10);
-
-        // 중복 제거하기
+        // 중복되지 않게 랜덤 생성
+        baseball[0] = (int) (Math.random() * 10);
         for (int i = 1; i < 4; i++) {
+            baseball[i] = (int) (Math.random() * 10);
             for (int j = 0; j < i; j++) {
-                if (baseball[i] == baseball[j])
-                    baseball[i] = (baseball[i] + 1) % 10;
+                if (baseball[j] == baseball[i]) {
+                    baseball[i] = (int) (Math.random() * 10);
+                    j-=2;
+                }
             }
         }
 
-        for (int i = 0; i < 4; i++)
-            System.out.print(baseball[i] + " ");
+        // 랜덤으로 생성된 숫자가 뭔지 확인하는 코드
+        //for (int i = 0; i < 4; i++)
+        //  System.out.print(baseball[i] + " ");
 
         // 프로그램
         for (int i = 0; i < 10; i++) {
+            boolean hasDuplicate = false;  // 이중 for문 탈출 코드 작성 시 필요한 변수 선언
             int countS = 0;
             int countB = 0;
             System.out.println((10 - i) + "회 남으셨습니다.");
 
             System.out.print("4자리 숫자를 입력하세요 : ");
-            int num = scanner.nextInt();
-            int[] numArr = {num / 1000, (num % 1000) / 100, ((num % 1000) % 100) / 10, num % 10};
+            String num = scanner.next();
+
+            if (num.length() != 4) {
+                System.out.println("4자리의 정수를 입력해야 합니다.");
+                i--;
+                continue;
+            }
+
+            for (int j = 0; j < 4; j++) {
+                for (int k = j + 1; k < 4; k++) {
+                    if ((num.charAt(j) - '0') == (num.charAt(k) - '0')) {
+                        System.out.println("중복된 숫자를 입력할 수 없습니다.");
+                        hasDuplicate = true;
+                        break;  // k가 있는 for문 탈출
+                    }
+                }
+                if (hasDuplicate)
+                    break;   // j가 있는 for문 탈출
+            }
+            if (hasDuplicate) {
+                i--;
+                continue; // 중복된 숫자를 입력하면, 4자리 정수를 입력하지 않은 경우와 같은 로직으로 처리
+            }
 
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < 4; k++) {
-                    if (baseball[j] == numArr[k]) {
+                    if (baseball[j] == (num.charAt(k) - '0')) {
                         if (j == k) countS++;
                         else countB++;
                     }
@@ -77,7 +99,6 @@ public class Application2 {
                 if (i == 9)
                     System.out.println("10번의 기회를 모두 소진하셨습니다. 프로그램을 종료합니다.");
             }
-
         }
     }
 }
