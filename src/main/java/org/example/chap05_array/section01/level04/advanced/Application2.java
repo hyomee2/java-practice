@@ -35,13 +35,12 @@ public class Application2 {
         int[] baseball = new int[4];
 
         // 중복되지 않게 랜덤 생성
-        baseball[0] = (int) (Math.random() * 10);
-        for (int i = 1; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             baseball[i] = (int) (Math.random() * 10);
             for (int j = 0; j < i; j++) {
-                if (baseball[j] == baseball[i]) {
-                    baseball[i] = (int) (Math.random() * 10);
-                    j-=2;
+                if (baseball[i] == baseball[j]) {
+                    i--;
+                    break;
                 }
             }
         }
