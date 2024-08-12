@@ -49,6 +49,7 @@ public class Application2 {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            sc.close();
             if (originFile != null) {
                 try {
                     originFile.close();
