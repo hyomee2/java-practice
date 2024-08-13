@@ -24,16 +24,18 @@ public class Application4 {
         while (true) {
             System.out.print("학생 ID 입력('exit' 입력 시 종료): ");
             String id = sc.next();
-            if (!id.equals("exit")) {
-                int size = hset.size();
-                hset.add(id);
-                if (size != hset.size())
-                    System.out.println("ID가 추가 되었습니다.");
-                else
-                    System.out.println("이미 등록된 ID입니다.");
-            }
-            else
+
+            if (id.equals("exit"))
                 break;
+
+            int size = hset.size();
+            hset.add(id);
+            if (size != hset.size())
+                System.out.println("ID가 추가 되었습니다.");
+            else
+                System.out.println("이미 등록된 ID입니다.");
+
+
         }
 
         System.out.print("모든 학생의 ID : [");
