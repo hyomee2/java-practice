@@ -20,13 +20,13 @@ public class Application3 {
 
         // 1. 각 학생의 평균 점수를 계산하여 맵으로 반환
         Map<String, Double> averageScoreByStudent = students.stream()
-                .collect(Collectors.groupingBy(Student::getName, Collectors.averagingDouble(Student::getScore)));// 코드 작성
+                .collect(Collectors.groupingBy(Student::getName, Collectors.averagingDouble(Student::getScore)));
 
         // 2. 특정 과목(수학)에서 90점 이상 받은 학생의 이름을 리스트로 반환
         List<String> highScorersInMath = students.stream()
                 .filter(s -> s.getSubject().equals("수학") && s.getScore() >= 90)
                 .map(Student::getName)
-                .collect(Collectors.toList());// 코드 작성
+                .collect(Collectors.toList());
 
         // 3. 가장 높은 평균 점수를 가진 학생의 이름을 반환
         String topStudent = averageScoreByStudent.entrySet().stream()
